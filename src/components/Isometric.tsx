@@ -19,27 +19,103 @@ import Overlay from "@/components/PixiEnv/Overlay";
 import { PixiViewport } from "@/components/PixiEnv/PixiViewport";
 
 export default function Isometric(): React.ReactNode {
+  const initialBlock = {
+    url: "/img/iso/grid-block-fill.png",
+    offset: 0,
+    hitboxOffset: 0,
+  };
+
   const blocks: Block[] = [
-    { url: "/img/iso/block.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/tree-point.png", offset: -37, hitboxOffset: 17 },
-    { url: "/img/iso/tree-block.png", offset: -37, hitboxOffset: 21 },
-    { url: "/img/iso/bush.png", offset: 0, hitboxOffset: 21 },
-    { url: "/img/iso/water-3.png", offset: 0, hitboxOffset: 21 },
-    { url: "/img/iso/house.png", offset: -22, hitboxOffset: 21 },
-    { url: "/img/iso/mansion-1.png", offset: -19, hitboxOffset: 19 },
-    { url: "/img/iso/mansion-2.png", offset: -28, hitboxOffset: 21 },
-    // { url: '/img/iso/apartments-small.png', offset: -60, hitboxOffset: 60 },
-    // { url: '/img/iso/apartments-large.png', offset: -115, hitboxOffset: 115 },
-    { url: "/img/iso/road-l.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/road-r.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/road-corner-ru.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/road-corner-rd.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/road-corner-lu.png", offset: 0, hitboxOffset: 0 },
-    { url: "/img/iso/road-corner-ld.png", offset: 0, hitboxOffset: 0 },
+    { url: "/img/iso/block.png", offset: 0, hitboxOffset: 0, label: "Land" },
+    {
+      url: "/img/iso/water-3.png",
+      offset: 0,
+      hitboxOffset: 21,
+      label: "Water",
+    },
+    {
+      url: "/img/iso/tree-block.png",
+      offset: -37,
+      hitboxOffset: 21,
+      label: "Trees",
+    },
+    {
+      url: "/img/iso/tree-point.png",
+      offset: -37,
+      hitboxOffset: 17,
+      label: "Trees",
+    },
+    { url: "/img/iso/bush.png", offset: 0, hitboxOffset: 21, label: "House" },
+    {
+      url: "/img/iso/house.png",
+      offset: -22,
+      hitboxOffset: 21,
+      label: "House",
+    },
+    {
+      url: "/img/iso/mansion-1.png",
+      offset: -19,
+      hitboxOffset: 19,
+      label: "Manison",
+    },
+    {
+      url: "/img/iso/mansion-2.png",
+      offset: -28,
+      hitboxOffset: 21,
+      label: "Manison",
+    },
+    {
+      url: "/img/iso/apartments-small.png",
+      offset: -60,
+      hitboxOffset: 60,
+      label: "Apartments",
+    },
+    {
+      url: "/img/iso/apartments-large.png",
+      offset: -115,
+      hitboxOffset: 115,
+      label: "Apartments",
+    },
+    {
+      url: "/img/iso/road-l.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "L-Junction",
+    },
+    {
+      url: "/img/iso/road-r.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "R-Junction",
+    },
+    {
+      url: "/img/iso/road-corner-ru.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "Corner",
+    },
+    {
+      url: "/img/iso/road-corner-rd.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "Corner",
+    },
+    {
+      url: "/img/iso/road-corner-lu.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "Corner",
+    },
+    {
+      url: "/img/iso/road-corner-ld.png",
+      offset: 0,
+      hitboxOffset: 0,
+      label: "Corner",
+    },
   ];
 
   const [grid, setGrid] = useState<Tile[]>(() =>
-    generateGrid(config.gridSize[0], config.gridSize[1], blocks[0])
+    generateGrid(config.gridSize[0], config.gridSize[1], initialBlock)
   );
   const [overlayPosition, setOverlayPosition] = useState<{
     x: number;
@@ -83,13 +159,15 @@ export default function Isometric(): React.ReactNode {
   const stageHeight = config.viewport[1];
 
   useEffect(() => {
-    window.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-      },
-      { passive: false }
-    );
+    if (typeof window !== "undefined") {
+      window.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+        },
+        { passive: false }
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -102,7 +180,7 @@ export default function Isometric(): React.ReactNode {
   }, [worldWidth, worldHeight]);
 
   return (
-    <>
+    <div className="content-center z-10">
       {selectedTile && (
         <Overlay
           blocks={blocks}
@@ -113,7 +191,7 @@ export default function Isometric(): React.ReactNode {
       <Stage
         height={stageHeight}
         width={stageWidth}
-        options={{ backgroundColor: 0xffffff }}
+        options={{ backgroundColor: 0xffffff, backgroundAlpha: 0 }}
       >
         <PixiViewport
           ref={viewportRef}
@@ -163,7 +241,7 @@ export default function Isometric(): React.ReactNode {
                   tint={isSelected ? 0xcccccc : 0xffffff}
                   pointerdown={(event) => selectTile(tile, event)}
                   pointerover={(event) =>
-                    !isSelected && (event.currentTarget.tint = 0xcccccc)
+                    !isSelected && (event.currentTarget.tint = 0xc2b280)
                   }
                   pointerout={(event) =>
                     !isSelected && (event.currentTarget.tint = 0xffffff)
@@ -174,6 +252,6 @@ export default function Isometric(): React.ReactNode {
           })}
         </PixiViewport>
       </Stage>
-    </>
+    </div>
   );
 }

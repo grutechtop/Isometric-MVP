@@ -2,7 +2,7 @@ export default {
   /**
    * Rows and columns of the grid
    */
-  gridSize: [5, 5],
+  gridSize: [8, 8],
 
   /**
    * Shape of the hitbox for the blocks
@@ -22,5 +22,5 @@ export default {
   /**
    * Size of the Stage to draw the grid on
    */
-  viewport: [600, 500],
+  viewport: [800, 500],
 }

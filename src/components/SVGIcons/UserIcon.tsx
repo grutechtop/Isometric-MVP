@@ -1,20 +1,15 @@
-import React from "react";
+import React, { SVGProps } from "react";
 
-export default function UserIcon({
-  width,
-  height,
-}: {
-  width: number;
-  height: number;
-}): React.ReactNode {
+export default function UserIcon(
+  props: SVGProps<SVGSVGElement>
+): React.ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 24 24"
       fill="currentColor"
       className="size-6"
+      {...props}
     >
       <path
         fillRule="evenodd"

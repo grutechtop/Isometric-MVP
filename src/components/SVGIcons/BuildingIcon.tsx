@@ -1,20 +1,15 @@
-import React from "react";
+import React, { SVGProps } from "react";
 
-export default function BuildingOfficeIcon({
-  width,
-  height,
-}: {
-  width: number;
-  height: number;
-}): React.ReactNode {
+export default function BuildingOfficeIcon(
+  props: SVGProps<SVGSVGElement>
+): React.ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      width={width}
-      height={height}
       fill="currentColor"
       className="size-6"
+      {...props}
     >
       <path
         fillRule="evenodd"

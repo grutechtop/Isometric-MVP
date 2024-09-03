@@ -24,6 +24,7 @@ const PixiViewportComponent = PixiComponent<
   create: ({ app, ...viewportProps }) => {
     const events = new EventSystem(app.renderer);
     events.domElement = app.renderer.view as unknown as HTMLElement;
+    app.renderer.background.alpha = 0;
 
     const viewport = new Viewport({
       ticker: app.ticker,
@@ -55,5 +56,7 @@ const PixiViewportComponent = PixiComponent<
 });
 
 export const PixiViewport = forwardRef<Viewport, ViewportProps>(
-  (props, ref) => <PixiViewportComponent ref={ref} app={useApp()} {...props} />
+  function MyViewport(props, ref) {
+    return <PixiViewportComponent ref={ref} app={useApp()} {...props} />;
+  }
 );
