@@ -17,6 +17,7 @@ import {
 } from "@/components/PixiEnv/GridUtils";
 import Overlay from "@/components/PixiEnv/Overlay";
 import { PixiViewport } from "@/components/PixiEnv/PixiViewport";
+import { motion } from "framer-motion";
 
 export default function Isometric(): React.ReactNode {
   const initialBlock = {
@@ -145,7 +146,11 @@ export default function Isometric(): React.ReactNode {
 
   const debug = config.debug;
 
+  // const tileWidth = 139.5;
   const tileWidth = 93;
+
+  // const tileHeight = 168;
+
   const tileHeight = 112;
 
   // Add padding for isometric perspective
@@ -180,7 +185,7 @@ export default function Isometric(): React.ReactNode {
   }, [worldWidth, worldHeight]);
 
   return (
-    <div className="content-center z-10">
+    <div className="content-center h-screen z-10">
       {selectedTile && (
         <Overlay
           blocks={blocks}
@@ -215,9 +220,11 @@ export default function Isometric(): React.ReactNode {
               selectedTile.x === tile.x &&
               selectedTile.y === tile.y;
 
+            console.log("tile.block.url", tile.block.url);
+
             return (
               <>
-                {debug && (
+                {/* {debug && (
                   <DebugHitbox
                     hitbox={hitArea}
                     x={isoX + paddingX / 2}
@@ -229,7 +236,7 @@ export default function Isometric(): React.ReactNode {
                     }
                     key={`hitarea-${tile.x}-${tile.y}`}
                   />
-                )}
+                )} */}
 
                 <Sprite
                   image={tile.block.url}

@@ -14,6 +14,13 @@ export default {
     [0, 28],
   ],
 
+  // hitbox: [
+  //   [70.5, 0],
+  //   [139.5, 42],
+  //   [70.5, 84],
+  //   [0, 42],
+  // ],
+
   /**
    * Debug mode (whether to visually display hitboxes or not)
    */
@@ -22,5 +29,7 @@ export default {
   /**
    * Size of the Stage to draw the grid on
    */
-  viewport: [800, 500],
+  viewport: [1600, 1400],
+  // viewport: [800, 500],
+
 }

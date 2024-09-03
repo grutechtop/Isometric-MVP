@@ -1,4 +1,5 @@
 import { Block } from "./GridUtils";
+import {motion} from "framer-motion"
 
 interface OverlayProps {
   blocks: Block[];
@@ -34,13 +35,21 @@ const Overlay = (props: OverlayProps) => {
           <div className="flex flex-col basis-1/4 w-5 bg-white shadow-2xl p-4 justify-around rounded-xl" key={index}>
             <div className="block-images flex flex-col text-center text-amber-950 font-serif font-bold justify-center">
               <div className="flex justify-center">
-                <img
+                <motion.img
                   className="block-item content-center center object-fill h-8 w-8 mb-3"
                   src={block.url}
                   width={30}
-                  height={30}
                   alt="block"
                   key={block.url}
+                  style={{height: 0}}
+                  animate={{height: 30}}
+                  transition={{
+                    type: "spring",
+                    damping: 10,
+                    mass: 0.75,
+                    stiffness: 100,
+                    duration: 2
+                }}
                 />
               </div>
               <h1 className="text-[8px]">{block.label}</h1>

@@ -31,6 +31,8 @@ const PixiViewportComponent = PixiComponent<
       events,
       ...viewportProps,
     });
+    viewport.scale.x = 1.8;
+    viewport.scale.y = 1.8;
 
     viewport
       .drag({
@@ -43,7 +45,8 @@ const PixiViewportComponent = PixiComponent<
       .clamp({ direction: "all" })
       .decelerate()
       .clampZoom({
-        maxScale: 1.5,
+        // minScale: 1.4,
+        maxScale: 5,
       });
 
     return viewport;
