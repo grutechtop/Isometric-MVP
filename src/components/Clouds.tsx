@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect,useMemo } from "react";
 import CloudL from "./SVGIcons/CloudL";
 import CloudR from "./SVGIcons/CloudR";
 import { motion } from "framer-motion";
 
 export default function Clouds(): React.ReactElement {
-  let screenWidth = 0;
-  useEffect(() => {
-    if (typeof window !== "undefined") screenWidth = window.innerWidth;
+  const screenWidth = useMemo(() => {
+    if (typeof window !== "undefined") return window.innerWidth;
   }, []);
   return (
     <div className="">
