@@ -14,7 +14,7 @@ export default function Navbar(): React.ReactNode {
   return (
     <div className="pt-10">
       <nav className="flex justify-center w-screen">
-        <ul className="flex flex-row justify-center bg-white w-80 rounded-xl shadow-xl gap-5 h-16 align-middle">
+        <ul className="flex flex-row justify-center z-30 bg-white w-80 rounded-xl shadow-xl gap-5 h-16 align-middle">
           <li className="tag flex h-12 w-16 mt-2 rounded-xl justify-center ">
             <Link
               href="#"

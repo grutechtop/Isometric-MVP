@@ -33,7 +33,6 @@ const PixiViewportComponent = PixiComponent<
     });
     viewport.scale.x = 1.8;
     viewport.scale.y = 1.8;
-
     viewport
       .drag({
         clampWheel: true,

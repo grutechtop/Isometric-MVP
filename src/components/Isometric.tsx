@@ -27,89 +27,89 @@ export default function Isometric(): React.ReactNode {
   };
 
   const blocks: Block[] = [
-    { url: "/img/iso/block.png", offset: 0, hitboxOffset: 0, label: "Land" },
+    { url: "/img/iso/block.png", offset: -19, hitboxOffset: 0, label: "Land" },
     {
       url: "/img/iso/water-3.png",
-      offset: 0,
+      offset: -18,
       hitboxOffset: 21,
       label: "Water",
     },
     {
       url: "/img/iso/tree-block.png",
-      offset: -37,
+      offset: -56,
       hitboxOffset: 21,
       label: "Trees",
     },
     {
       url: "/img/iso/tree-point.png",
-      offset: -37,
+      offset: -54,
       hitboxOffset: 17,
       label: "Trees",
     },
-    { url: "/img/iso/bush.png", offset: 0, hitboxOffset: 21, label: "House" },
+    { url: "/img/iso/bush.png", offset: -17, hitboxOffset: 21, label: "House" },
     {
       url: "/img/iso/house.png",
-      offset: -22,
+      offset: -39,
       hitboxOffset: 21,
       label: "House",
     },
     {
       url: "/img/iso/mansion-1.png",
-      offset: -19,
+      offset: -36,
       hitboxOffset: 19,
       label: "Manison",
     },
     {
       url: "/img/iso/mansion-2.png",
-      offset: -28,
+      offset: -46,
       hitboxOffset: 21,
       label: "Manison",
     },
     {
       url: "/img/iso/apartments-small.png",
-      offset: -60,
+      offset: -78,
       hitboxOffset: 60,
       label: "Apartments",
     },
     {
       url: "/img/iso/apartments-large.png",
-      offset: -115,
+      offset: -134,
       hitboxOffset: 115,
       label: "Apartments",
     },
     {
       url: "/img/iso/road-l.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "L-Junction",
     },
     {
       url: "/img/iso/road-r.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "R-Junction",
     },
     {
       url: "/img/iso/road-corner-ru.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "Corner",
     },
     {
       url: "/img/iso/road-corner-rd.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "Corner",
     },
     {
       url: "/img/iso/road-corner-lu.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "Corner",
     },
     {
       url: "/img/iso/road-corner-ld.png",
-      offset: 0,
+      offset: -19,
       hitboxOffset: 0,
       label: "Corner",
     },
@@ -132,7 +132,7 @@ export default function Isometric(): React.ReactNode {
     }
 
     const updatedGrid = grid.map((t) =>
-      t.x === selectedTile.x && t.y === selectedTile.y ? { ...t, block } : t
+      t.x === selectedTile.x && t.y === selectedTile.y ? {...t, block } : t
     );
 
     setGrid(updatedGrid);
@@ -146,10 +146,10 @@ export default function Isometric(): React.ReactNode {
 
   const debug = config.debug;
 
-  // const tileWidth = 139.5;
+  // const tileWidth = 125.5;
   const tileWidth = 93;
 
-  // const tileHeight = 168;
+  // const tileHeight = 150;
 
   const tileHeight = 112;
 
@@ -220,8 +220,6 @@ export default function Isometric(): React.ReactNode {
               selectedTile.x === tile.x &&
               selectedTile.y === tile.y;
 
-            console.log("tile.block.url", tile.block.url);
-
             return (
               <>
                 {/* {debug && (
@@ -245,11 +243,11 @@ export default function Isometric(): React.ReactNode {
                   key={`${tile.x}-${tile.y}`}
                   interactive={true}
                   hitArea={hitArea}
-                  tint={isSelected ? 0xcccccc : 0xffffff}
+                  tint={isSelected ? 0xc3caca : 0xffffff}
                   pointerdown={(event) => selectTile(tile, event)}
-                  pointerover={(event) =>
-                    !isSelected && (event.currentTarget.tint = 0xc2b280)
-                  }
+                  pointerover={(event) => {
+                    !isSelected && (event.currentTarget.tint = 0xff9b62);
+                  }}
                   pointerout={(event) =>
                     !isSelected && (event.currentTarget.tint = 0xffffff)
                   }

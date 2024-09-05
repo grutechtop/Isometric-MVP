@@ -5,9 +5,9 @@ import Clouds from "@/components/Clouds";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen bg-[#fff1c5]">
+    <div className="w-screen h-screen bg-[#FFF9E9]">
       <Navbar />
-      <div className="flex justify-center overflow-hidden h-full">
+      <div className="flex justify-center h-full">
         <Isometric />
       </div>
       <Clouds />

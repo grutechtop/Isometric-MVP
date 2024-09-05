@@ -11,12 +11,12 @@ export default function Clouds(): React.ReactElement {
     return 0;
   }, []);
   return (
-    <div className="opacity-20">
+    <div className="-z-40">
       {/* //right to left */}
       <motion.div
         initial={{ x: screenWidth - 100, y: -300, scale: 1.8 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 80,
@@ -26,7 +26,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -500 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -34,13 +34,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudL fill="#9a7a6a" />
+          <CloudL fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 200, y: -400, scale: 0.6 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 60,
@@ -50,7 +50,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -500 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -58,13 +58,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudL fill="#9a7a6a" />
+          <CloudL fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth, y: -300, scale: 0.3 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 80,
@@ -74,7 +74,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -300 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -82,13 +82,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 300, y: -400, scale: 1.3 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 70,
@@ -98,7 +98,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -200 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -106,13 +106,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 500, y: -300, scale: 1.1 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 50,
@@ -122,7 +122,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -300 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -130,13 +130,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 900, y: -600, scale: 0.5 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 80,
@@ -146,7 +146,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -500 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -154,13 +154,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudL fill="#9a7a6a" />
+          <CloudL fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 300, y: -700, scale: 1.2 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 60,
@@ -170,7 +170,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -500 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -178,13 +178,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudL fill="#9a7a6a" />
+          <CloudL fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 800, y: -300, scale: 0.8 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 80,
@@ -194,7 +194,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -300 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -202,13 +202,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 300, y: -200, scale: 1.3 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 70,
@@ -218,7 +218,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -50 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -226,13 +226,13 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
       <motion.div
         initial={{ x: screenWidth - 800, y: -300, scale: 1.5 }}
         animate={{ x: 0 }}
-        className="absolute z-0"
+        className="absolute -z-0"
         transition={{
           ease: "linear",
           duration: 50,
@@ -242,7 +242,7 @@ export default function Clouds(): React.ReactElement {
         <motion.div
           initial={{ x: 0, y: -100 }}
           animate={{ scale: 1.2, opacity: 10 }}
-          className="absolute z-0"
+          className="absolute -z-0"
           transition={{
             type: "spring",
             duration: 5,
@@ -250,7 +250,7 @@ export default function Clouds(): React.ReactElement {
             repeat: Infinity,
           }}
         >
-          <CloudR fill="#9a7a6a" />
+          <CloudR fill="#FDF2D7" />
         </motion.div>
       </motion.div>
     </div>
