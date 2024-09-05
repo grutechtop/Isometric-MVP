@@ -27,7 +27,7 @@ export default function Isometric(): React.ReactNode {
   };
 
   const blocks: Block[] = [
-    { url: "/img/iso/block.png", offset: -19, hitboxOffset: 0, label: "Land" },
+    { url: "/img/iso/block.png", offset: -17, hitboxOffset: 0, label: "Land" },
     {
       url: "/img/iso/water-3.png",
       offset: -18,
@@ -36,7 +36,7 @@ export default function Isometric(): React.ReactNode {
     },
     {
       url: "/img/iso/tree-block.png",
-      offset: -56,
+      offset: -54,
       hitboxOffset: 21,
       label: "Trees",
     },
